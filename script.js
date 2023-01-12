@@ -1,6 +1,8 @@
 /****************************START SWAB COLUMN  */
 var currentColumn;
 
+
+
 function dragStart(event) {
   currentColumn = event.target;
 }
@@ -77,8 +79,19 @@ columns.forEach(function (column) {
   column.addEventListener("dragover", dragOver);
   column.addEventListener("drop", drop);
 });
-
 /*****************************************end swap column */
+/************************** width of th like the td start */
+var rows = document.querySelector("#table tbody tr");
+    var cells = rows.children;
+    console.log();
+var rowss = document.querySelectorAll("#table th div");
+rowss.forEach(function (raw) {
+  var index = Array.prototype.indexOf.call(raw.parentNode.parentNode.children, raw.parentNode);
+  raw.style.minWidth=cells[index].offsetWidth+'px';
+    
+})
+/*******************************width end */
+
 /**********************day button setting start  */
 
 const column = document.getElementById('column-setting');
